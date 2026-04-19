@@ -1,290 +1,171 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcelo Jr | Especialista em Emagrecimento</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcelo Jr | Transformação Física</title>
 
-    <style>
-        /* --- VARIÁVEIS E RESET --- */
-        :root {
-            --primary: #00FF88;
-            --bg-dark: #0B0B0B;
-            --bg-card: #1A1A1A;
-            --text-white: #FFFFFF;
-            --text-gray: #A0A0A0;
-            --transition: all 0.3s ease;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+body {
+    background: #0B0B0B;
+    color: #fff;
+}
 
-        /* --- UTILITÁRIOS --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        .highlight { color: var(--primary); }
+section {
+    padding: 60px 0;
+}
 
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: #000;
-            padding: 18px 35px;
-            border-radius: 50px;
-            font-weight: 900;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-            text-align: center;
-            border: none;
-            cursor: pointer;
-        }
+h1, h2 {
+    font-weight: 700;
+}
 
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
-        }
+.btn {
+    background: #00FF88;
+    color: #000;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
 
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            position: relative;
-            background: linear-gradient(rgba(11, 11, 11, 0.8), rgba(11, 11, 11, 0.8)), url('personal.jpg'); /* Foto do Personal aqui */
-            background-size: cover;
-            background-position: center;
-        }
+.btn:hover {
+    transform: scale(1.05);
+    background: #00cc6a;
+}
 
-        .hero-content { max-width: 700px; }
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
+.hero-text {
+    max-width: 500px;
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 30px;
-        }
+.hero img {
+    width: 300px;
+    border-radius: 15px;
+}
 
-        .stars { color: #FFD700; margin-top: 20px; }
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        /* --- SOBRE / AUTORIDADE --- */
-        .about { padding: 100px 0; background: var(--bg-dark); }
-        .grid-about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .about-img img {
-            width: 100%;
-            border-radius: 20px;
-            border-left: 5px solid var(--primary);
-        }
-        .badges {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .badge {
-            background: rgba(0, 255, 136, 0.1);
-            border: 1px solid var(--primary);
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
+.card {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 250px;
+}
 
-        /* --- RESULTADOS --- */
-        .results { padding: 100px 0; background: var(--bg-card); }
-        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; }
-        
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .result-card {
-            background: var(--bg-dark);
-            padding: 15px;
-            border-radius: 15px;
-            transition: var(--transition);
-        }
-        .result-card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-        .testimonial-text { font-style: italic; font-size: 0.9rem; color: var(--text-gray); }
+/* RESULTADOS */
+.gallery {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-        /* --- COMO FUNCIONA --- */
-        .how-it-works { padding: 100px 0; text-align: center; }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        .step-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+.gallery img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+}
 
-        /* --- CTA FINAL --- */
-        .cta-final {
-            padding: 120px 0;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('personal.jpg');
-            background-size: cover;
-            border-top: 2px solid var(--primary);
-        }
-        .urgency { color: #ff4444; font-weight: bold; margin-top: 15px; }
-
-        /* --- RESPONSIVIDADE --- */
-        @media (max-width: 768px) {
-            .grid-about { grid-template-columns: 1fr; text-align: center; }
-            .hero { text-align: center; justify-content: center; }
-            .hero h1 { font-size: 2.2rem; }
-            .badges { justify-content: center; }
-        }
-    </style>
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #000;
+}
+</style>
 </head>
+
 <body>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-right">
-                <h1>Transforme seu corpo em semanas, <span class="highlight">mesmo sem tempo.</span></h1>
-                <p>Método comprovado para emagrecimento rápido, saudável e sem dietas milagrosas. O acompanhamento que você precisa.</p>
-                <a href="https://wa.me/5522998570923?text=Vi%20um%20anúncio%20no%20Instagram%20e%20quero%20emagrecer!" class="btn">QUERO EMAGRECER AGORA</a>
-                
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span style="color: white; font-size: 0.9rem; margin-left: 10px;">+500 vidas transformadas</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero container">
+    <div class="hero-text">
+        <h1>Transforme seu corpo em semanas</h1>
+        <p>Método comprovado para emagrecimento rápido e saudável</p>
+        <br>
+        <a class="btn" href="https://wa.me/5522998570923?text=Vi%20um%20anúncio%20no%20Instagram%20e%20quero%20emagrecer!">QUERO EMAGRECER AGORA</a>
+    </div>
+    <img src="personal.jpg" alt="Personal">
+</section>
 
-    <section class="about">
-        <div class="container">
-            <div class="grid-about">
-                <div class="about-img" data-aos="zoom-in">
-                    <img src="personal.jpg" alt="Marcelo Jr Personal">
-                </div>
-                <div class="about-text" data-aos="fade-left">
-                    <h2 class="section-title" style="text-align: left;">Quem é <span class="highlight">Marcelo Jr?</span></h2>
-                    <p>Especialista em emagrecimento de alta performance, Marcelo Jr desenvolveu um método focado em quem tem rotinas intensas mas não abre mão da saúde e da estética.</p>
-                    <p style="margin-top: 15px;">Aqui não existe "treino de gaveta". Cada plano é esculpido para a sua realidade, garantindo que cada minuto de exercício conte.</p>
-                    
-                    <div class="badges">
-                        <span class="badge">Especialista em Emagrecimento</span>
-                        <span class="badge">Resultados Comprovados</span>
-                        <span class="badge">Atendimento Premium</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- SOBRE -->
+<section class="container">
+    <h2>Sobre o Personal</h2>
+    <br>
+    <p>Marcelo Jr é especialista em transformação física e emagrecimento. Com um método exclusivo, já ajudou dezenas de pessoas a conquistarem o corpo ideal.</p>
+    <br>
+    <div class="cards">
+        <div class="card">Atendimento Personalizado</div>
+        <div class="card">Resultados Rápidos</div>
+        <div class="card">Método Exclusivo</div>
+    </div>
+</section>
 
-    <section class="results">
-        <div class="container">
-            <h2 class="section-title">Resultados <span class="highlight">Reais</span></h2>
-            <div class="results-grid">
-                <div class="result-card" data-aos="flip-left">
-                    <img src="resultado1.jpg" alt="Resultado Antes e Depois">
-                    <p class="testimonial-text">"Perdi 8kg em 30 dias e recuperei minha disposição para brincar com meus filhos."</p>
-                    <div class="stars"><i class="fas fa-star"></i> 5/5</div>
-                </div>
-                <div class="result-card" data-aos="flip-left" data-aos-delay="100">
-                    <img src="resultado2.jpg" alt="Resultado Antes e Depois">
-                    <p class="testimonial-text">"Minha autoestima mudou completamente. O Marcelo sabe exatamente como nos motivar."</p>
-                    <div class="stars"><i class="fas fa-star"></i> 5/5</div>
-                </div>
-                <div class="result-card" data-aos="flip-left" data-aos-delay="200">
-                    <img src="resultado3.jpg" alt="Resultado Antes e Depois">
-                    <p class="testimonial-text">"O melhor investimento que fiz na vida. Resultados rápidos e consistentes."</p>
-                    <div class="stars"><i class="fas fa-star"></i> 5/5</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- RESULTADOS -->
+<section class="container">
+    <h2>Resultados Reais</h2>
+    <br>
+    <div class="gallery">
+        <img src="antes1.jpg">
+        <img src="depois1.jpg">
+        <img src="antes2.jpg">
+        <img src="depois2.jpg">
+    </div>
+</section>
 
-    <section class="how-it-works">
-        <div class="container">
-            <h2 class="section-title">Seu caminho até o <span class="highlight">novo corpo</span></h2>
-            <div class="steps-grid">
-                <div class="step-card" data-aos="fade-up">
-                    <i class="fab fa-whatsapp"></i>
-                    <h3>Passo 1</h3>
-                    <p>Contato inicial pelo WhatsApp para alinhamento.</p>
-                </div>
-                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-clipboard-list"></i>
-                    <h3>Passo 2</h3>
-                    <p>Avaliação personalizada dos seus objetivos e rotina.</p>
-                </div>
-                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>Passo 3</h3>
-                    <p>Receba seu plano exclusivo de emagrecimento.</p>
-                </div>
-                <div class="step-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Passo 4</h3>
-                    <p>Acompanhamento contínuo e ajustes de metas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- COMO FUNCIONA -->
+<section class="container">
+    <h2>Como Funciona</h2>
+    <br>
+    <div class="cards">
+        <div class="card">1. Contato pelo WhatsApp</div>
+        <div class="card">2. Avaliação Personalizada</div>
+        <div class="card">3. Plano de Emagrecimento</div>
+        <div class="card">4. Acompanhamento</div>
+    </div>
+</section>
 
-    <section class="cta-final">
-        <div class="container" data-aos="zoom-out">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Você pode continuar adiando... <br><span class="highlight">ou começar hoje.</span></h2>
-            <p>Resultados reais começam com uma decisão. Eu estou pronto, e você?</p>
-            <br>
-            <a href="https://wa.me/5522998570923?text=Vi%20um%20anúncio%20no%20Instagram%20e%20quero%20emagrecer!" class="btn" style="padding: 25px 50px; font-size: 1.2rem;">COMEÇAR AGORA</a>
-            <p class="urgency"><i class="fas fa-fire"></i> Vagas limitadas para esta semana!</p>
-        </div>
-    </section>
+<!-- CTA FINAL -->
+<section class="container">
+    <h2>Você pode continuar adiando ou começar hoje</h2>
+    <br>
+    <p>Resultados reais começam com uma decisão.</p>
+    <br>
+    <a class="btn" href="https://wa.me/5522998570923?text=Vi%20um%20anúncio%20no%20Instagram%20e%20quero%20emagrecer!">COMEÇAR AGORA</a>
+</section>
 
-    <footer style="padding: 30px; text-align: center; font-size: 0.8rem; color: var(--text-gray);">
-        &copy; 2026 Marcelo Jr - Todos os direitos reservados. Design focado em conversão.
-    </footer>
+<footer>
+    <p>© 2026 Marcelo Jr - Todos os direitos reservados</p>
+</footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
 </body>
 </html>
